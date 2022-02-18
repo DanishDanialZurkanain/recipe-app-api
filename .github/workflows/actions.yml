@@ -27,3 +27,9 @@ jobs:
 
       - name: Run Docker
         run: docker compose up -d
+
+      - name: Run test
+        run: docker compose run application python manage.py test
+
+      - name: Run pylint
+        run: docker compose run application pylint application
