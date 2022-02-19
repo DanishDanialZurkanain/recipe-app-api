@@ -31,5 +31,8 @@ jobs:
       - name: Run test
         run: docker compose run application python manage.py test
 
-      - name: Run pylint
-        run: docker compose run application pylint application
+      - name: Run pylint on models.py
+        run: docker compose run application pylint core/models.py
+      
+      - name: Run pylint on tests
+        run: docker compose run application pylint core/tests
