@@ -28,6 +28,9 @@ jobs:
       - name: Run Docker
         run: docker compose up -d
 
+      - name: Run yapf
+        run: docker compose run application yapf --in-place --recursive . 
+
       - name: Run test
         run: docker compose run application python manage.py test
 
